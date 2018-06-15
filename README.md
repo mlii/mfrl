@@ -2,6 +2,12 @@
 
 A PyTorch implementation of MF-Q in the paper [Mean Field Multi-Agent Reinforcement Learning ](https://arxiv.org/pdf/1802.05438.pdf).
 
+## Examples
+
+![image](https://github.com/mlii/mfrl/blob/master/resources/line.gif)
+ 
+ An 20*20 Ising model example under low temperature.
+
 ## Code structure
 
 - `main_MFQ_Ising.py`: contains code for running tabular based MFQ for Ising model.
