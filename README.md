@@ -4,7 +4,7 @@ A PyTorch implementation of MF-Q in the paper [Mean Field Multi-Agent Reinforcem
 
 ## Example
 
-[image](https://github.com/mlii/mfrl/blob/master/resources/line.gif)
+![image](https://github.com/mlii/mfrl/blob/master/resources/line.gif)
  
  An 20*20 Ising model example under the low temperature.
 
