@@ -8,6 +8,10 @@ A PyTorch implementation of MF-Q and MF-AC in the paper [Mean Field Multi-Agent 
  
  An 20*20 Ising model example under the low temperature.
 
+![image](https://github.com/mlii/mfrl/blob/master/resources/battle.git)
+
+ A 40x40 grid world of Battle Game
+
 ## Code structure
 
 - `main_MFQ_Ising.py`: contains code for running tabular based MFQ for Ising model.
