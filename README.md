@@ -12,7 +12,45 @@ A PyTorch implementation of MF-Q in the paper [Mean Field Multi-Agent Reinforcem
 
 - `main_MFQ_Ising.py`: contains code for running tabular based MFQ for Ising model.
 
-- `./examples/`: contains scenarios for Ising Model.
+- `./examples/`: contains scenarios for Ising Model and Battle Game (also models).
+
+- `battle.py`: contains code for running Battle Game with trained model
+
+- `train_battle.py`: contains code for training Battle Game models
+
+## Compile MAgent platform and run
+
+Before running Battle Game environment, you need to compile it. You can get more helps from: [MAgent](https://github.com/geek-ai/MAgent)
+
+**Steps for compiling**
+
+```shell
+cd examples/battle_model
+./build.sh
+```
+
+**Steps for training models under Battle Game settings**
+
+1. Add python path in your `~/.bashrc` or `~/.zshrc`:
+
+    ```shell
+    vim ~/.zshrc
+    export PYTHONPATH=./examples/battle_model/python:${PYTHONPATH}
+    source ~/.zshrc
+    ```
+
+2. Run training script for training (e.g. mfac):
+
+    ```shell
+    python3 train_battle.py --algo mfac
+    ```
+
+    or get help:
+
+    ```shell
+    python3 train_battle.py --help
+    ```
+
 
 ## Paper citation
 
