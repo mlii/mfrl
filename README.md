@@ -29,8 +29,6 @@ cd examples/battle_model
 ./build.sh
 ```
 
-Any problems occurs when you compile it, you can find solutions from 👉 [MAgent](https://github.com/geek-ai/MAgent)
-
 **Steps for training models under Battle Game settings**
 
 1. Add python path in your `~/.bashrc` or `~/.zshrc`:
