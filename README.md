@@ -8,7 +8,7 @@ A PyTorch implementation of MF-Q and MF-AC in the paper [Mean Field Multi-Agent 
  
  An 20x20 Ising model example under the low temperature.
 
-<img src="https://github.com/mlii/mfrl/blob/master/resources/battle.gif" style="width:300px; height:300px"/>
+<img src="https://github.com/mlii/mfrl/blob/master/resources/battle.gif" style="width:200px; height:200px"/>
 
  A 40x40 Battle Game gridworld example with 128 agents.
  
