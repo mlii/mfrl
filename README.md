@@ -10,7 +10,7 @@ A PyTorch implementation of MF-Q and MF-AC in the paper [Mean Field Multi-Agent 
 
 <img src="https://github.com/mlii/mfrl/blob/master/resources/battle.gif" width='300' height='300'/>
 
- A 40x40 Battle Game gridworld example with 128 agents.
+ A 40x40 Battle Game gridworld example with 128 agents, the blue one is MFQ, and the red one is IL.
  
 ## Code structure
 
