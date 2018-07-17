@@ -61,13 +61,22 @@ cd examples/battle_model
 If you found it helpful, consider citing the following paper:
 
 <pre>
-@article{2018arXiv180205438Y,
-   author = {{Yang}, Y. and {Luo}, R. and {Li}, M. and {Zhou}, M. and {Zhang}, W. and 
-	{Wang}, J.},
-   title = "{Mean Field Multi-Agent Reinforcement Learning}",
-   journal = {ArXiv e-prints},
-   eprint = {1802.05438},
-   year = 2018,
-   month = feb
+
+
+
+
+
+@InProceedings{pmlr-v80-yang18d,
+  title = 	 {Mean Field Multi-Agent Reinforcement Learning},
+  author = 	 {Yang, Yaodong and Luo, Rui and Li, Minne and Zhou, Ming and Zhang, Weinan and Wang, Jun},
+  booktitle = 	 {Proceedings of the 35th International Conference on Machine Learning},
+  pages = 	 {5567--5576},
+  year = 	 {2018},
+  editor = 	 {Dy, Jennifer and Krause, Andreas},
+  volume = 	 {80},
+  series = 	 {Proceedings of Machine Learning Research},
+  address = 	 {Stockholmsmässan, Stockholm Sweden},
+  month = 	 {10--15 Jul},
+  publisher = 	 {PMLR}
 }
 </pre>
