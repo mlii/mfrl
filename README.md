@@ -22,6 +22,13 @@ A PyTorch implementation of MF-Q and MF-AC in the paper [Mean Field Multi-Agent 
 
 - `train_battle.py`: contains code for training Battle Game models
 
+## Compile Ising environment and run
+
+**Requirements**
+- =python==3.6.1=
+- =gym==0.9.2= (might work with later versions)
+- =matplotlib= if you would like to produce Ising model figures
+
 ## Compile MAgent platform and run
 
 Before running Battle Game environment, you need to compile it. You can get more helps from: [MAgent](https://github.com/geek-ai/MAgent)
