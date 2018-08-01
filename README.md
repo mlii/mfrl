@@ -27,7 +27,7 @@ A PyTorch implementation of MF-Q and MF-AC in the paper [Mean Field Multi-Agent 
 **Requirements**
 - `python==3.6.1`
 - `gym==0.9.2` (might work with later versions)
-- `matplotlib' if you would like to produce Ising model figures
+- `matplotlib` if you would like to produce Ising model figures
 
 ## Compile MAgent platform and run
 

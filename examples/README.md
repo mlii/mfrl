@@ -17,4 +17,4 @@ Environments and scenarios for Ising Model.
 **Requirements**
 - `python==3.6.1`
 - `gym==0.9.2` (might work with later versions)
-- `matplotlib' if you would like to produce Ising model figures
+- `matplotlib` if you would like to produce Ising model figures
