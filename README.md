@@ -6,12 +6,12 @@ A PyTorch implementation of MF-Q and MF-AC in the paper [Mean Field Multi-Agent 
 
 ![image](https://github.com/mlii/mfrl/blob/master/resources/line.gif)
  
- An 20*20 Ising model example under the low temperature.
+ An 20x20 Ising model example under the low temperature.
 
-![image](https://github.com/mlii/mfrl/blob/master/resources/battle.git)
+<img src="https://github.com/mlii/mfrl/blob/master/resources/battle.gif" width='300' height='300'/>
 
- A 40x40 grid world of Battle Game
-
+ A 40x40 Battle Game gridworld example with 128 agents, the blue one is MFQ, and the red one is IL.
+ 
 ## Code structure
 
 - `main_MFQ_Ising.py`: contains code for running tabular based MFQ for Ising model.
@@ -21,6 +21,13 @@ A PyTorch implementation of MF-Q and MF-AC in the paper [Mean Field Multi-Agent 
 - `battle.py`: contains code for running Battle Game with trained model
 
 - `train_battle.py`: contains code for training Battle Game models
+
+## Compile Ising environment and run
+
+**Requirements**
+- `python==3.6.1`
+- `gym==0.9.2` (might work with later versions)
+- `matplotlib` if you would like to produce Ising model figures
 
 ## Compile MAgent platform and run
 
@@ -61,13 +68,22 @@ cd examples/battle_model
 If you found it helpful, consider citing the following paper:
 
 <pre>
-@article{2018arXiv180205438Y,
-   author = {{Yang}, Y. and {Luo}, R. and {Li}, M. and {Zhou}, M. and {Zhang}, W. and 
-	{Wang}, J.},
-   title = "{Mean Field Multi-Agent Reinforcement Learning}",
-   journal = {ArXiv e-prints},
-   eprint = {1802.05438},
-   year = 2018,
-   month = feb
+
+
+
+
+
+@InProceedings{pmlr-v80-yang18d,
+  title = 	 {Mean Field Multi-Agent Reinforcement Learning},
+  author = 	 {Yang, Yaodong and Luo, Rui and Li, Minne and Zhou, Ming and Zhang, Weinan and Wang, Jun},
+  booktitle = 	 {Proceedings of the 35th International Conference on Machine Learning},
+  pages = 	 {5567--5576},
+  year = 	 {2018},
+  editor = 	 {Dy, Jennifer and Krause, Andreas},
+  volume = 	 {80},
+  series = 	 {Proceedings of Machine Learning Research},
+  address = 	 {Stockholmsmässan, Stockholm Sweden},
+  month = 	 {10--15 Jul},
+  publisher = 	 {PMLR}
 }
 </pre>

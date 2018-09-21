@@ -1,6 +1,6 @@
 # Example Scenarios
 
-Environments and scenarios for Ising Model.
+Environments and scenarios for Ising Model and Battle Game.
 
 ## Code structure
 
