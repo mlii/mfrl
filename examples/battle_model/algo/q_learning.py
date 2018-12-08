@@ -11,7 +11,6 @@ class DQN(base.ValueNet):
 
         super().__init__(sess, env, handle, name, update_every=update_every)
 
-        # self.replay_buffer = tools.GeneralReplayBuffer(memory_size, batch_size, self.view_space, self.feature_space, self.num_actions)
         self.replay_buffer = tools.MemoryGroup(self.view_space, self.feature_space, self.num_actions, memory_size, batch_size, sub_len)
         self.sess.run(tf.global_variables_initializer())
 
@@ -71,7 +70,7 @@ class MFQ(base.ValueNet):
         self.update_every = update_every
 
     def flush_buffer(self, **kwargs):
-        self.replay_buffer.push(**kwargs)  
+        self.replay_buffer.push(**kwargs)
 
     def train(self):
         self.replay_buffer.tight()
@@ -84,7 +83,7 @@ class MFQ(base.ValueNet):
 
             if i % self.update_every == 0:
                 self.update()
-            
+
             if i % 50 == 0:
                 print('[*] LOSS:', loss, '/ Q:', q)
 

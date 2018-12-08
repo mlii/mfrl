@@ -50,5 +50,5 @@ if __name__ == '__main__':
 
     for k in range(0, args.n_round):
         runner.run(0.0, k, win_cnt=win_cnt)
-    
+
     print('\n[*] >>> WIN_RATE: [{0}] {1} / [{2}] {3}'.format(args.algo, win_cnt['main'] / args.n_round, args.oppo, win_cnt['opponent'] / args.n_round))
