@@ -243,8 +243,8 @@ class MFAC:
         self.calc_action = tf.multinomial(tf.log(policy), 1)
 
         # for value obtain
-        emb_prob = tf.dense(input_act_prob, unit=64, activation=tf.nn.relu)
-        dense_prob = tf.dense(emb_prob, unit=32, action=tf.nn.relu)
+        emb_prob = tf.layers.dense(input_act_prob, units=64, activation=tf.nn.relu)
+        dense_prob = tf.layers.dense(emb_prob, units=32, activation=tf.nn.relu)
         concat_layer = tf.concat([concat_layer, dense_prob], axis=1)
         dense = tf.layers.dense(concat_layer, units=hidden_size[0], activation=tf.nn.relu)
         value = tf.layers.dense(dense, units=1)
