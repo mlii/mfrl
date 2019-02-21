@@ -28,14 +28,13 @@ class ValueNet:
 
         with tf.variable_scope(name or "ValueNet"):
             self.name_scope = tf.get_variable_scope().name
-            # self.global_scope = tf.get_variable_scope().name
             self.obs_input = tf.placeholder(tf.float32, (None,) + self.view_space, name="Obs-Input")
             self.feat_input = tf.placeholder(tf.float32, (None,) + self.feature_space, name="Feat-Input")
             self.mask = tf.placeholder(tf.float32, shape=(None,), name='Terminate-Mask')
 
             if self.use_mf:
                 self.act_prob_input = tf.placeholder(tf.float32, (None, self.num_actions), name="Act-Prob-Input")
-            
+
             # TODO: for calculating the Q-value, consider softmax usage
             self.act_input = tf.placeholder(tf.int32, (None,), name="Act")
             self.act_one_hot = tf.one_hot(self.act_input, depth=self.num_actions, on_value=1.0, off_value=0.0)
@@ -86,7 +85,7 @@ class ValueNet:
         q = tf.layers.dense(out, units=self.num_actions, name="Q-Value")
 
         return q
-    
+
     @property
     def vars(self):
         return tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES, scope=self.name_scope)
@@ -145,7 +144,7 @@ class ValueNet:
         kwargs: {'state': [obs, feature], 'target_q', 'prob', 'acts'}
         """
         feed_dict = {
-            self.obs_input: kwargs['state'][0], 
+            self.obs_input: kwargs['state'][0],
             self.feat_input: kwargs['state'][1],
             self.target_q_input: kwargs['target_q'],
             self.mask: kwargs['masks']
