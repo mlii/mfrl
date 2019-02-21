@@ -5,7 +5,7 @@ from magent.gridworld import GridWorld
 
 
 class ValueNet:
-    def __init__(self, sess, env, handle, name, update_every=5, use_mf=False, learning_rate=1e-4, tau=0.99, gamma=0.95):
+    def __init__(self, sess, env, handle, name, update_every=5, use_mf=False, learning_rate=1e-4, tau=0.005, gamma=0.95):
         # assert isinstance(env, GridWorld)
         self.env = env
         self.name = name
@@ -42,6 +42,7 @@ class ValueNet:
             with tf.variable_scope("Eval-Net"):
                 self.eval_name = tf.get_variable_scope().name
                 self.e_q = self._construct_net(active_func=tf.nn.relu)
+                self.predict = tf.nn.softmax(self.e_q / self.temperature)
                 self.e_variables = tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES, scope=self.eval_name)
 
             with tf.variable_scope("Target-Net"):
@@ -124,19 +125,15 @@ class ValueNet:
             self.feat_input: kwargs['state'][1]
         }
 
+        self.temperature = kwargs['eps']
+
         if self.use_mf:
             assert kwargs.get('prob', None) is not None
             assert len(kwargs['prob']) == len(kwargs['state'][0])
             feed_dict[self.act_prob_input] = kwargs['prob']
 
-        q_values = self.sess.run(self.e_q, feed_dict=feed_dict)
-
-        switch = np.random.uniform()
-
-        if switch < kwargs['eps']:
-            actions = np.random.choice(self.num_actions, len(kwargs['state'][0])).astype(np.int32)
-        else:
-            actions = np.argmax(q_values, axis=1).astype(np.int32)
+        actions = self.sess.run(self.predict, feed_dict=feed_dict)
+        actions = np.argmax(actions, axis=1).astype(np.int32)
         return actions
 
     def train(self, **kwargs):

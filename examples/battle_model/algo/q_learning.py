@@ -26,8 +26,7 @@ class DQN(base.ValueNet):
             target_q = self.calc_target_q(obs=obs_next, feature=feat_next, rewards=rewards, dones=dones)
             loss, q = super().train(state=[obs, feats], target_q=target_q, acts=actions, masks=masks)
 
-            if i % self.update_every == 0:
-                self.update()
+            self.update()
 
             if i % 50 == 0:
                 print('[*] LOSS:', loss, '/ Q:', q)
@@ -81,8 +80,7 @@ class MFQ(base.ValueNet):
             target_q = self.calc_target_q(obs=obs_next, feature=feat_next, rewards=rewards, dones=dones, prob=act_prob_next)
             loss, q = super().train(state=[obs, feat], target_q=target_q, prob=act_prob, acts=acts, masks=masks)
 
-            if i % self.update_every == 0:
-                self.update()
+            self.update()
 
             if i % 50 == 0:
                 print('[*] LOSS:', loss, '/ Q:', q)
