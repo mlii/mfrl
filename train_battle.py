@@ -14,6 +14,22 @@ from examples.battle_model.senario_battle import play
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+def linear_decay(epoch, x, y):
+    min_v, max_v = y[0], y[-1]
+    start, end = x[0], x[-1]
+
+    if epoch == start:
+        return min_v
+
+    eps = min_v
+
+    for i, x_i in enumerate(x):
+        if epoch <= x_i:
+            interval = (y[i] - y[i - 1]) / (x_i - x[i - 1])
+            eps = interval * (epoch - x[i - 1]) + y[i - 1]
+            break
+
+    return eps
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -53,5 +69,5 @@ if __name__ == '__main__':
                             log_dir=log_dir, model_dir=model_dir, train=True)
 
     for k in range(start_from, start_from + args.n_round):
-        eps = magent.utility.piecewise_decay(k, [0, 700, 1400], [1, 0.2, 0.05])
+        eps = linear_decay(k, [0, int(args.n_round * 0.8), args.n_round], [1, 0.2, 0.1])
         runner.run(eps, k)
