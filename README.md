@@ -1,6 +1,6 @@
 # Mean Field Multi-Agent Reinforcement Learning 
 
-A PyTorch implementation of MF-Q and MF-AC in the paper [Mean Field Multi-Agent Reinforcement Learning ](https://arxiv.org/pdf/1802.05438.pdf).
+Implementation of MF-Q and MF-AC in the paper [Mean Field Multi-Agent Reinforcement Learning ](https://arxiv.org/pdf/1802.05438.pdf).
 
 ## Example
 
